@@ -1,0 +1,44 @@
+{
+  "name": "@canalis/react-link",
+  "version": "1.0.11",
+  "description": "",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/useQueryAi/react-canalis-link.git"
+  },
+  "keywords": [],
+  "author": "",
+  "tags": [
+    "canalis",
+    "react"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-react": "^7.22.3",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/react": "^18.2.7",
+    "rollup": "^3.23.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "react-script-hook": "^1.7.2"
+  }
+}
