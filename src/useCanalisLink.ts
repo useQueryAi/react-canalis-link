@@ -21,7 +21,6 @@ export default function useCanalisLink(props: CanalisLinkProps) {
     };
   }, [loading]);
 
-  // TODO: Give event parameter a type.
   const postMessageListener = useCallback((event: any) => {
     // TODO: Check if the origin is not at our hosted domain (when we have one)
     if (event.origin !== "http://localhost:3000") {
@@ -30,13 +29,10 @@ export default function useCanalisLink(props: CanalisLinkProps) {
     }
 
     // Extract data from event.
-    console.log(event.data);
     const { code, status, error } = event.data;
     if (status === "success") {
       props.onSuccess(code as string);
     } else if (status === "error") {
-      console.log(error);
-      console.log(event.data.error);
       props.onError && props.onError(error as string);
     } else {
       console.log(`Unknown response received: ${JSON.stringify(event)}`);
