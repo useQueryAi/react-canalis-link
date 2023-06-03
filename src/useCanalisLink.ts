@@ -8,7 +8,7 @@ const BASE_URL =
   "https://storage.googleapis.com/canalis-link-sdk/canalis-link-sdk.js";
 
 export default function useCanalisLink(props: CanalisLinkProps) {
-  const [loading, error] = useScript({
+  const [loading, errorState] = useScript({
     src: BASE_URL,
     checkForExisting: true,
   });
@@ -48,8 +48,8 @@ export default function useCanalisLink(props: CanalisLinkProps) {
     clientId: string;
     endUserOriginId: string;
   }) => {
-    if (error) {
-      throw new Error(`Error loading Canalis SDK: ${error}`);
+    if (errorState) {
+      throw new Error(`Error loading Canalis SDK: ${errorState}`);
     }
     if (!window.Canalis) {
       console.error("Canalis is not initialised");
@@ -61,7 +61,7 @@ export default function useCanalisLink(props: CanalisLinkProps) {
 
   return {
     ready: !loading,
-    error,
+    errorState,
     open,
   };
 }
