@@ -35,7 +35,9 @@ export default function useCanalisLink(props: CanalisLinkProps) {
     if (status === "success") {
       props.onSuccess(code as string);
     } else if (status === "error") {
-      props.onError && props.onError(error);
+      console.log(error);
+      console.log(event.data.error);
+      props.onError && props.onError(error as string);
     } else {
       console.log(`Unknown response received: ${JSON.stringify(event)}`);
     }
