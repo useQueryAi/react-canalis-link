@@ -23,19 +23,21 @@ export default function useCanalisLink(props: CanalisLinkProps) {
 
   // TODO: Give event parameter a type.
   const postMessageListener = useCallback((event: any) => {
-    // TODO: Check if the origin is not at our hosted domain (when we have one)/
+    // TODO: Check if the origin is not at our hosted domain (when we have one)
     if (event.origin !== "http://localhost:3000") {
       console.log(`Unknown origin detected: ${event.origin}`);
       return;
     }
 
     // Extract data from event.
-    const { code, status, error } = event.data;
+    console.log(event.data);
+    const { code, status, error, data } = event.data;
     if (status === "success") {
       props.onSuccess(code as string);
+    } else if (status === "error") {
+      props.onError && props.onError(data);
     } else {
-      console.error("Error occurred...");
-      props.onError ? props.onError(new Error("error occurred")) : "";
+      console.log(`Unknown response received: ${JSON.stringify(event)}`);
     }
   }, []);
 
@@ -54,9 +56,6 @@ export default function useCanalisLink(props: CanalisLinkProps) {
       return;
     }
     // Open modal
-    console.log(
-      `Invoking window.Canalis.open w/ ${clientId} & ${endUserOriginId}`
-    );
     window.Canalis.open({ clientId, endUserOriginId });
   };
 
