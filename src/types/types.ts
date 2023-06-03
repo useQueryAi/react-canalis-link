@@ -1,6 +1,6 @@
 export interface CanalisLinkProps {
   onSuccess: (code: string) => void;
-  onError?: (error: Error) => void;
+  onError?: (error: string) => void;
 }
 
 interface CanalisState {
