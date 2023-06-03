@@ -31,11 +31,11 @@ export default function useCanalisLink(props: CanalisLinkProps) {
 
     // Extract data from event.
     console.log(event.data);
-    const { code, status, error, data } = event.data;
+    const { code, status, error } = event.data;
     if (status === "success") {
       props.onSuccess(code as string);
     } else if (status === "error") {
-      props.onError && props.onError(data);
+      props.onError && props.onError(error);
     } else {
       console.log(`Unknown response received: ${JSON.stringify(event)}`);
     }
