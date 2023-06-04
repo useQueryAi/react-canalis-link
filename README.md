@@ -2,7 +2,7 @@
 
 ## Description
 
-Canalis is an advanced `Embeddings as a Service (EaaS)` software that seamlessly orchestrates `Extract, Transform, and Load (ETL)` operations from Software as a Service (SaaS) platforms to Vector Databases. This transformation process primes the data within SaaS platforms for the optimal utilization in Large Language Model (LLM) applications, thus enhancing retrieval augmented generation (RAG), promoting cost efficiency in updating embedding vectors, and supporting integration with multiple LLM providers. To delve deeper into the capabilities of Canalis, please visit our [official website](http://www.canalis.io).
+Canalis is an advanced `Embeddings as a Service (EaaS)` software that seamlessly orchestrates `Extract, Transform, and Load (ETL)` operations from Software as a Service (SaaS) platforms to Vector Databases. This transformation process primes the data within SaaS platforms for the optimal utilization in Large Language Model (LLM) applications, thus enhancing retrieval augmented generation (RAG), promoting cost efficiency in updating embedding vectors, and supporting integration with multiple LLM providers. To delve deeper into the capabilities of Canalis, please visit our [official website](http://www.canalis.ai).
 
 ## Overview
 
@@ -71,6 +71,6 @@ For more detailed information on leveraging this package effectively, refer to t
 
 Happy coding!
 
-## License
+## Support
 
-This project is licensed under the terms of the MIT license.
+Email us at <code>support@canalis.ai</code>
