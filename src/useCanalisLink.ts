@@ -23,7 +23,10 @@ export default function useCanalisLink(props: CanalisLinkProps) {
 
   const postMessageListener = useCallback((event: any) => {
     // TODO: Check if the origin is not at our hosted domain (when we have one)
-    if (event.origin !== "http://localhost:3000") {
+    if (
+      event.origin !== "http://localhost:3000" ||
+      event.origin !== "https://www.canalis.ai"
+    ) {
       console.log(`Unknown origin detected: ${event.origin}`);
       return;
     }
